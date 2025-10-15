@@ -17,10 +17,22 @@ class BookType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('isbn')
-            ->add('title')
-            ->add('summary')
-            ->add('publicationYear')
+            ->add('isbn', null, [
+                'label' => 'ISBN',
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Entrez l’ISBN']
+            ])
+            ->add('title', null, [
+                'label' => 'Titre',
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Titre du livre']
+            ])
+            ->add('summary', null, [
+                'label' => 'Résumé',
+                'attr' => ['class' => 'form-control', 'rows' => 3]
+            ])
+            ->add('publicationYear', null, [
+                'label' => 'Année de publication',
+                'attr' => ['class' => 'form-control']
+            ])
             ->add('issueDate')
             ->add('createdAt')
             ->add('updatedAt')

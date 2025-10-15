@@ -11,6 +11,9 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
+    <header>
+        <img src="{{ asset('images/nologo.svg') }}" alt="Logo" width="100">
+    </header>
     <body>
         {% block body %}{% endblock %}
     </body>
