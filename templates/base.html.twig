@@ -13,8 +13,21 @@
     </head>
     <header>
         <img src="{{ asset('images/nologo.svg') }}" alt="Logo" width="100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ path('app_login') }}">Municipal Library</a>
+
+                <div class="d-flex">
+                    <a href="{{ path('app_toggle_theme') }}" class="btn btn-outline-secondary">
+                        🌗 Mode {{ app.request.cookies.get('myapp_dark_mode') == 'true' ? 'clair' : 'sombre' }}
+                    </a>
+                </div>
+            </div>
+        </nav>
+
     </header>
-    <body>
+    <body class="{{ app.request.cookies.get('myapp_dark_mode') == 'true' ? 'dark-mode' : 'light-mode' }}">
         {% block body %}{% endblock %}
     </body>
+
 </html>

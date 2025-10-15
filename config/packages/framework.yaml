@@ -1,16 +1,11 @@
-# see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
     secret: '%env(APP_SECRET)%'
 
-    # Protection CSRF activée pour tous les formulaires Symfony
     csrf_protection: true
 
-    # La session n'est démarrée que si on y accède (lecture/écriture)
     session:
-        # Durée de vie maximale du cookie de session : 48 heures (172800 secondes)
         cookie_lifetime: 172800
 
-        # Sécurité renforcée du cookie de session :
         cookie_secure: auto
         cookie_httponly: true
         cookie_samesite: strict
@@ -19,13 +14,6 @@ framework:
 
 
 
-
-
-    # Si tu utilises des fragments Twig ou du cache HTTP
-    #esi: true
-    #fragments: true
-
-# Configuration spécifique à l’environnement de test
 when@test:
     framework:
         test: true
